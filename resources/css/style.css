@@ -168,7 +168,7 @@ header {
   }
   .nav-menu.active {
   right: 0;
-  z-index: 1;
+  z-index: 2;
   opacity: 1;
   }
 
@@ -312,7 +312,9 @@ header {
 /* footer css */
 
 footer {
-  margin-top: 2rem;
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .footer-container {
@@ -487,6 +489,56 @@ ul {
   color: var(--clr-darkyellow);
 }
 
+.wrapper-button {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  /* margin-top: 130px; */
+}
+
+.wrapper-button span{
+  display: block;
+  clip-path: polygon(50% 100%, 0 50%, 100% 50%);
+  background-color: var(--clr-darkblue);
+  width: 50px;
+  height: 50px;
+  transition:all ease-in-out 0.5s;
+  z-index: -1;
+}
+
+.wrapper-button.active span{
+  display: block;
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
+  background-color: var(--clr-blue);
+  width: 50px;
+  height: 50px;
+  transition:all ease-in-out 0.5s;
+}
+
+.wrapper {
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: visibility 0.5s ease-in-out 0s,
+  max-height 0.5s ease-in-out 0s,
+  opacity 0.5s ease-in-out 0s;
+  margin-bottom: 2rem;
+  overflow-y: hidden;
+}
+
+.wrapper.active {
+  visibility: visible;
+  max-height: 2000px;
+  opacity: 1;
+  transition: visibility 0.5s ease-in-out 0s,
+  max-height 0.5s ease-in-out 0s,
+  opacity 0.5s ease-in-out 0s;
+}
+
+.wrapper-button.active span{
+  color: #77F79B;
+}
+
 /* desktop alignment */
 @media screen and (min-width:800px) {
   
@@ -520,6 +572,8 @@ ul {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
   }
+
+
 }
 
 /* clock */
