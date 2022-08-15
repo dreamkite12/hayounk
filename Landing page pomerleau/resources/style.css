@@ -1,0 +1,234 @@
+:root {
+  --fnt-primary:'Alfa Slab One', Cursive;
+  --fnt-secondary: 'Gentium Book Basic', Serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./images/background.jpg);
+  background-size: cover;
+  position:relative;
+}
+
+/* header css */
+
+header {
+  height: 5rem;
+}
+
+.nav *{
+  box-sizing: border-box;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.nav-menu {
+  display: flex;
+  padding-top: 1rem;
+  gap: 60px;
+}
+
+.nav-branding {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0 5rem;
+  background-color: white;
+  height: 109px;
+  text-decoration: none;
+  color: black;
+  font-family: var(--fnt-secondary);
+  text-decoration: solid underline 5px;
+}
+
+.nav-link {
+  transition: 0.7s ease;
+  font-size: var(--fs-600);
+  font-weight: 600;
+  color: black;
+}
+
+.nav-link:hover {
+  color: var(--clr-green);
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.hamburger {
+  display: block;
+  background-color: black;
+  padding: 2.5rem 2.5rem;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+  position:fixed;
+  top: calc(25px + 5rem);
+  right: -100%;
+  gap: 0;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  height:calc(100vh - 90px);
+  /* text-align: center; */
+  z-index: 1;
+  opacity: 0;
+  transition:opacity 150ms ease-in-out;
+}
+
+.nav-item{
+  margin: 16px 0;
+  padding-left: 2rem;
+}
+.nav-menu.active {
+right: 0;
+z-index: 1;
+opacity: 1;
+}
+
+/* body css */
+.body-container {
+  width: auto;
+  margin-top: 8rem;
+  color:white;
+  margin-left: calc(25px + 5rem);
+  margin-right: calc(25px + 5rem);
+}
+
+.body-container h2 {
+  font-size: 5rem;
+  font-family: var(--fnt-primary);
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* padding: 0 3rem; */
+  margin-top: 18rem;
+}
+
+.arrow-button {
+  display: flex;
+  margin-right: 2rem;
+}
+
+.arrow-button > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid white 1px;
+  width: 5rem;
+  height: 5rem;
+}
+
+.arrow-button > div > p {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.text-button {
+  display: flex;
+  align-items: center;
+}
+
+.text-button > a {
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+  padding: 1.5rem 6rem;
+  font-family: var(--fnt-secondary);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* mobile view */
+
+@media screen and (max-width: 800px) {
+  .body-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navbar{
+    width: 100%;
+  }
+
+  .nav-branding {
+    padding: 0 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .body-container h2 {
+    font-size: 3.5rem;
+    margin-left: 1rem;
+  }
+
+  .button-container {
+    margin-top: 6.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .arrow-button {
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 0;
+    margin-bottom: 6.5rem;
+  }
+
+  .arrow-button > div {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .arrow-button > div > p {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .text-button {
+    /* display: block; */
+    width: 75%;
+    justify-content: space-around;
+  }
+
+  .text-button > a {
+    padding: 1rem 1rem;
+    font-size: 0.8rem;
+  }
+}

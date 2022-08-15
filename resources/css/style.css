@@ -361,7 +361,7 @@ footer p {
   footer {
     margin-left: 15vw;
     margin-right: 15vw;
-    margin-top: 10vw;
+    margin-top: 8vw;
   }
   .footer-container {
     justify-content: space-around;
@@ -487,6 +487,11 @@ ul {
 
 .button.contact:hover {
   color: var(--clr-darkyellow);
+}
+
+.wrapper-container {
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper-button {
