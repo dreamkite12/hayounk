@@ -651,10 +651,28 @@ p a {
   margin-top: 3rem;
 }
 
+.grid-landing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .grid-korean {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.grid-landing a {
+  box-sizing: border-box;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  background-color: var(--clr-blue);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  font-family: var(--fnt-secondary);
 }
 
 .grid-korean a {
